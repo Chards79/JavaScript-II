@@ -494,12 +494,27 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1: The head of the fun run would like a list of the companies of the participants so he can recognize them in the paper. Create a new array that just lists the companies from the original array. This will be an array of strings.
+
 let companyNames = [];
 const coNames = runners.forEach(element => {
 	return companyNames.push(`${element.company_name}`);
 });
 
 console.log(companyNames);
-// Problem 2
 
-// Problem 3
+// Problem 2: The power-drunk director thought the upper case first names looked so good, he now wants an array with both first and last names capitalized.
+
+const allCaps = runners.map(item => {
+	return item.first_name.toUpperCase() + " " + item.last_name.toUpperCase();
+});
+
+console.log(allCaps);
+
+// Problem 3: Now that the fun run is over the power-drunk director wants an array of emails only for everyone that ran so that he can spam the crap out of them during the next year with all of his crazy ideas for the next fun run.
+
+let emailList = [];
+const emails = runners.forEach(element => {
+	return emailList.push(`${element.email}`);
+});
+
+console.log(emailList);
